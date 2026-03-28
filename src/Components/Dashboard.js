@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 export default function Dashboard() {
-  const [setProfile] = useState(null);
+  const [profile,setProfile] = useState(null);
   const navigate = useNavigate();
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -17,7 +17,6 @@ export default function Dashboard() {
     };
     fetchProfile();
   }, []);
-
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -57,21 +56,21 @@ export default function Dashboard() {
           </div>
 
           <div className="flex gap-3">
-                <button
-                  onClick={() =>
-                    navigate("/profile-form", { state: { mode: "create" } })
-                  }
-                  className="w-1/2 bg-[#0A4174] hover:bg-blue-300 text-white py-2 rounded-lg"
-                >
-                  Create Profile
-                </button>
+            <button
+              onClick={() =>
+                navigate("/profile-form", { state: { mode: "create" } })
+              }
+              className="w-1/2 bg-[#0A4174] hover:bg-blue-300 text-white py-2 rounded-lg"
+            >
+              Create Profile
+            </button>
 
-                <button
-                  onClick={() => navigate("/profile")}
-                  className="w-1/2 bg-[#0A4174] hover:bg-blue-300 text-white py-2 rounded-lg"
-                >
-                  View
-                </button>
+            <button
+              onClick={() => navigate("/profile")}
+              className="w-1/2 bg-[#0A4174] hover:bg-blue-300 text-white py-2 rounded-lg"
+            >
+              View
+            </button>
           </div>
         </div>
 
