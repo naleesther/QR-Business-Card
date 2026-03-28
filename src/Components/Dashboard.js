@@ -16,8 +16,8 @@ export default function Dashboard() {
       setProfile(res.data);
     } catch (err) {
       console.log(err);
-    }
-  };
+    };
+   }
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
