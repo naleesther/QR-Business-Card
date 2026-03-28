@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 export default function Dashboard() {
+  const [setProfile] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
