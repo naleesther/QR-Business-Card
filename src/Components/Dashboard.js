@@ -7,17 +7,17 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const res = await API.get("/profile/");
+        setProfile(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
     fetchProfile();
   }, []);
 
-  const fetchProfile = async () => {
-    try {
-      const res = await API.get("/profile/");
-      setProfile(res.data);
-    } catch (err) {
-      console.log(err);
-    };
-   }
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
