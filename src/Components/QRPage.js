@@ -1,12 +1,12 @@
+// eslint-disable-next-line
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 
-
 export default function QRPage() {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [paying, setPaying] = useState(false);
+  const [paying] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function QRPage() {
     }
   };
 
-    const handlePayment = async () => {
+  const handlePayment = async () => {
     const phone = prompt("Enter your phone number");
 
     if (!phone) return;

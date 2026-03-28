@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 export default function Dashboard() {
-  const [profile, setProfile] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
