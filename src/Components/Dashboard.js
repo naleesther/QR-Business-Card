@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 export default function Dashboard() {
-  const [profile,setProfile] = useState(null);
+  const [setProfile] = useState(null);
   const navigate = useNavigate();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   useEffect(() => {
     const fetchProfile = async () => {
       try {
